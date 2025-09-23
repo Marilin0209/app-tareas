@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: "Fira Code", monospace; /* fuente de programadores */
+  background-color: #0d1117; /* negro dev */
+  color: #e6edf3; /* texto claro */
+}
+
+header {
+  background-color: #161b22; /* gris oscuro */
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #58a6ff; /* azul estilo GitHub */
+  border-bottom: 2px solid #30363d;
+}
+.tarea {
+  display: flex;
+  justify-content: space-between; /* Texto a la izquierda, botón a la derecha */
+  align-items: center; /* Centrado vertical */
+  padding: 8px 0; /* Espacio arriba y abajo */
+  border-bottom: 1px solid #f0f0f0; /* Línea separadora sutil */
+}
+
+.tarea-info {
+  display: flex;
+  flex-direction: column; /* Título arriba, descripción abajo */
+}
+
+.tarea button {
+  margin-left: 10px; /* Espacio entre texto y botón */
+}
+/* ====== 1) Forzar que la barra superior ocupe TODO el ancho de la ventana ====== */
+/* Esto cubre casos comunes (header, nav, AppBar de Material, etc.). */
+header,
+nav,
+.topbar,
+.appbar,
+.mat-toolbar,
+[role="banner"] {
+  width: 100vw !important; /* ocupar todo el ancho de la ventana */
+  margin-left: calc(
+    50% - 50vw
+  ) !important; /* si está dentro de un contenedor centrado, lo estira */
+  box-sizing: border-box;
+}
+
+/* Si quieres la barra fija en top (opcional), descomenta estas 2 líneas:
+header, .topbar, .appbar { position: fixed; top: 0; z-index: 1000; }
+Y luego añade padding-top al body igual a la altura del header para que no lo tape:
+body { padding-top: 64px; } 
+*/
+
+/* ====== 2) Forzar que el área principal sea columna izquierda (50%) + resto vacío ====== */
+/* Apunta a selectores comunes de "contenedor de página". No modifica tu contenido HTML. */
+main,
+.main,
+.app-content,
+.page-content,
+.container,
+.content {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 20px; /* separación entre columnas si hay algo a la derecha */
+}
+
+/* Hacemos que el PRIMER hijo directo del contenedor ocupe la mitad izquierda (50%) */
+main > *:first-child,
+.content > *:first-child,
+.container > *:first-child,
+.app-content > *:first-child {
+  flex: 0 0 50% !important; /* no se encoge, no crece, ocupa 50% */
+  max-width: 50% !important;
+  width: 50% !important;
+  box-sizing: border-box;
+}
+
+/* Dentro de esa columna izquierda, que CADA item ocupe el 100% del ancho de esa mitad */
+main > *:first-child > *,
+.content > *:first-child > *,
+.container > *:first-child > * {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* ====== 3) Responsive: en pantallas chicas volvemos a 100% para que no se vea mal ====== */
+@media (max-width: 768px) {
+  main,
+  .main,
+  .content,
+  .container {
+    display: block !important;
+  }
+  main > *:first-child,
+  .content > *:first-child,
+  .container > *:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+  header,
+  .topbar,
+  .appbar {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
