@@ -1,7 +1,7 @@
 # 📌 Proyecto: App de Tareas en React
 
-Este es un proyecto de **lista de tareas** desarrollado con **React + Vite** y **Material UI**.  
-Incluye un menú lateral (drawer) con navegación y páginas para **agregar, modificar y eliminar tareas**.
+Este es un proyecto de Gestion de estudiantes desarrollado con **React + Vite** y **Material UI**.  
+Incluye un menú lateral (drawer) con navegación y páginas para \*_agregar, modificar y eliminar estudiantes_.
 
 ---
 
@@ -14,7 +14,7 @@ Incluye un menú lateral (drawer) con navegación y páginas para **agregar, mod
 
 ## ⚙️ Instalación
 
-1. Descomprimir el archivo `app-tareas.zip`.
+1. Descomprimir el archivo `app-estudiantes.zip`.
 2. Abrir la carpeta del proyecto en la terminal.
 3. Instalar las dependencias con:
    ```bash
