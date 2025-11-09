@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 const Starred = () => {
-  const [tareas, setTareas] = useState([
+  const [estudiantes, setEstudiantes] = useState([
     {
       id: 1,
       titulo: "Configurar entorno",
@@ -29,44 +29,6 @@ const Starred = () => {
       importante: false,
     },
   ]);
-
-  const marcarImportante = (id) => {
-    setTareas(
-      tareas.map((t) => (t.id === id ? { ...t, importante: !t.importante } : t))
-    );
-  };
-
-  return (
-    <Box sx={{ padding: 3 }}>
-      <Typography variant="h5" gutterBottom>
-        ⭐ Tareas Importantes
-      </Typography>
-
-      <List>
-        {tareas.map((t) => (
-          <ListItem
-            key={t.id}
-            secondaryAction={
-              <Button
-                variant="outlined"
-                color={t.importante ? "warning" : "primary"}
-                onClick={() => marcarImportante(t.id)}
-              >
-                {t.importante ? "Quitar" : "Marcar"}
-              </Button>
-            }
-          >
-            <ListItemText
-              primary={t.titulo}
-              secondary={`${t.descripcion} ${
-                t.importante ? "⭐ IMPORTANTE" : ""
-              }`}
-            />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
 };
 
 export default Starred;

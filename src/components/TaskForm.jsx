@@ -14,7 +14,7 @@ import { FaPlus, FaTasks } from "react-icons/fa";
 const TaskForm = () => {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
-  const [tasks, setTasks] = useState([]); // lista de tareas
+  const [tasks, setTasks] = useState([]); // lista de estudiantes
   const [open, setOpen] = useState(false);
   const [alertType, setAlertType] = useState("success");
 
@@ -54,15 +54,15 @@ const TaskForm = () => {
         sx={{ display: "flex", alignItems: "center", mb: 2 }}
       >
         <FaPlus style={{ marginRight: "8px" }} />
-        Agregar Nueva Tarea
+        Crear Estudiante
       </Typography>
 
       {/* Contenedor del formulario: ocupa mitad izquierda */}
       <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
-        <Box sx={{ width: "50%" }}>
+        <Box sx={{ width: "10%" }}>
           <form onSubmit={handleSubmit}>
             <TextField
-              label="Título de la tarea"
+              label="Estudiante"
               fullWidth
               margin="normal"
               value={taskTitle}
@@ -83,23 +83,23 @@ const TaskForm = () => {
               color="primary"
               sx={{ mt: 2 }}
             >
-              Guardar Tarea
+              Guardar Estudiante
             </Button>
           </form>
         </Box>
       </Box>
 
-      {/* Lista de tareas */}
+      {/* Lista de Estudiantes */}
       <Typography
         variant="subtitle1"
         sx={{ display: "flex", alignItems: "center", mt: 4 }}
       >
         <FaTasks style={{ marginRight: "8px" }} />
-        Lista de tareas
+        Lista de Estudiantes
       </Typography>
 
       {tasks.length === 0 ? (
-        <Typography variant="body2">No hay tareas todavía.</Typography>
+        <Typography variant="body2">No hay Estudiantes todavía.</Typography>
       ) : (
         <Box sx={{ mt: 2 }}>
           {tasks.map((task) => (
@@ -129,8 +129,8 @@ const TaskForm = () => {
           sx={{ width: "100%" }}
         >
           {alertType === "success"
-            ? "¡Tarea agregada con éxito!"
-            : "Debes escribir un título para la tarea."}
+            ? "¡Estudiante guardado con éxito!"
+            : "Debes completar los datos del estudiante."}
         </Alert>
       </Snackbar>
     </Box>

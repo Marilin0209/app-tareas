@@ -22,7 +22,6 @@ import Agregar from "./pages/Agregar";
 import Modificar from "./pages/Modificar";
 import Eliminar from "./pages/Eliminar";
 import Starred from "./pages/Starred";
-import SendEmail from "./pages/SendEmail";
 // import TaskForm from "./pages/TaskForm"; // ⚠️ Duplicado con "Agregar"
 
 /**
@@ -55,7 +54,6 @@ function App() {
           <Route path="/modificar" element={<Modificar />} />
           <Route path="/eliminar" element={<Eliminar />} />
           <Route path="/starred" element={<Starred />} />
-          <Route path="/send" element={<SendEmail />} />
 
           {/* Página por defecto */}
           <Route path="*" element={<Inbox />} />

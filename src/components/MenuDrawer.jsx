@@ -2,7 +2,7 @@
  * MenuDrawer.jsx
  * -----------------------------
  * Componente que implementa un AppBar fijo y un Drawer lateral
- * con opciones de navegación para la aplicación de gestión de tareas.
+ * con opciones de navegación para la aplicación de Gestión Escolar.
  *
  * Tecnologías usadas:
  * - Material UI (AppBar, Drawer, List, etc.)
@@ -37,7 +37,7 @@ import {
 } from "react-icons/fa";
 
 const drawerWidth = 200; // Ancho del menú lateral
-const APPBAR_HEIGHT = 70; // Alto del AppBar (en píxeles)
+const APPBAR_HEIGHT = 100; // Alto del AppBar (en píxeles)
 
 export default function MenuDrawer() {
   const [open, setOpen] = React.useState(false);
@@ -69,12 +69,12 @@ export default function MenuDrawer() {
             display: "flex",
             alignItems: "center",
             fontWeight: "bold",
-            color: "#58a6ff",
+            color: "#a0cd60", //Color Verded
             fontFamily: "Fira Code, monospace",
           }}
         >
           <FaCode style={{ marginRight: 8 }} />
-          DevTrack
+          Opciones
         </Typography>
       </Toolbar>
 
@@ -89,7 +89,7 @@ export default function MenuDrawer() {
           onClick={handleDrawerToggle}
         >
           <FaTasks style={{ marginRight: 10 }} />
-          <ListItemText primary="Ver Tareas" />
+          <ListItemText primary="Ver Estudiantes" />
         </ListItem>
 
         <ListItem
@@ -99,7 +99,7 @@ export default function MenuDrawer() {
           onClick={handleDrawerToggle}
         >
           <FaPlus style={{ marginRight: 10 }} />
-          <ListItemText primary="Agregar Tarea" />
+          <ListItemText primary="Agregar Estudiante" />
         </ListItem>
 
         <ListItem
@@ -109,7 +109,7 @@ export default function MenuDrawer() {
           onClick={handleDrawerToggle}
         >
           <FaEdit style={{ marginRight: 10 }} />
-          <ListItemText primary="Modificar Tarea" />
+          <ListItemText primary="Modificar Estudiante" />
         </ListItem>
 
         <ListItem
@@ -119,27 +119,7 @@ export default function MenuDrawer() {
           onClick={handleDrawerToggle}
         >
           <FaTrash style={{ marginRight: 10 }} />
-          <ListItemText primary="Eliminar Tarea" />
-        </ListItem>
-
-        <ListItem
-          button
-          component={Link}
-          to="/starred"
-          onClick={handleDrawerToggle}
-        >
-          <FaStar style={{ marginRight: 10 }} />
-          <ListItemText primary="Tareas Importantes" />
-        </ListItem>
-
-        <ListItem
-          button
-          component={Link}
-          to="/send"
-          onClick={handleDrawerToggle}
-        >
-          <FaEnvelope style={{ marginRight: 10 }} />
-          <ListItemText primary="Enviar por Email" />
+          <ListItemText primary="Eliminar Estudiante" />
         </ListItem>
       </List>
     </div>
@@ -154,7 +134,7 @@ export default function MenuDrawer() {
         position="fixed"
         sx={{
           width: "100%",
-          backgroundColor: "#BE1393", // Color morado
+          backgroundColor: "#a0cd60", // Color verde
         }}
       >
         <Toolbar sx={{ minHeight: `${APPBAR_HEIGHT}px !important` }}>
@@ -175,7 +155,7 @@ export default function MenuDrawer() {
             component="div"
             sx={{ fontFamily: "Fira Code, monospace" }}
           >
-            Administrador de Tareas
+            Gestion Escolar
           </Typography>
         </Toolbar>
       </AppBar>
